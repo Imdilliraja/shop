@@ -1,226 +1,307 @@
-/* ═══════════════════════════════════════════════════════════════
-   DILLIRAJA SHOP - Website JavaScript
-   Location: Arni, Tamil Nadu
-═══════════════════════════════════════════════════════════════ */
+/* =============================================
+   KICKSTART DIGITAL - Landing Page Scripts
+   ============================================= */
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
 
-    /* ── Mobile Drawer Navigation ────────────────────────────── */
-    function openDrawer() {
-        $('#shDrawer').addClass('open').attr('aria-hidden', 'false');
-        $('#shDrawerOverlay').addClass('open');
-        $('body').css('overflow', 'hidden');
-        $('#shHamburger').attr('aria-expanded', 'true');
-    }
+    // ---- Loading Screen ----
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 600);
+    });
 
-    function closeDrawer() {
-        $('#shDrawer').removeClass('open').attr('aria-hidden', 'true');
-        $('#shDrawerOverlay').removeClass('open');
-        $('body').css('overflow', '');
-        $('#shHamburger').attr('aria-expanded', 'false');
-    }
+    // Fallback: hide loader after 3 seconds max
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 3000);
 
-    function toggleDrawer() {
-        if ($('#shDrawer').hasClass('open')) {
-            closeDrawer();
+    // ---- Header Scroll Effect ----
+    const header = document.getElementById('header');
+    const backToTop = document.getElementById('backToTop');
+
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY > 50) {
+            header.classList.add('scrolled');
         } else {
-            openDrawer();
+            header.classList.remove('scrolled');
         }
-    }
 
-    $('#shHamburger').on('click', function (e) {
-        e.stopPropagation();
-        toggleDrawer();
-    });
-
-    $('#shDrawerClose').on('click', function () {
-        closeDrawer();
-    });
-
-    $('#shDrawerOverlay').on('click', function () {
-        closeDrawer();
-    });
-
-    $(document).on('keydown', function (e) {
-        if (e.key === 'Escape') {
-            closeDrawer();
+        if (scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
         }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // ---- Back to Top ----
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    $('#shDrawer .sh-drawer-nav a').on('click', function () {
-        closeDrawer();
+    // ---- Mobile Navigation ----
+    const menuToggle = document.getElementById('menuToggle');
+    const navList = document.getElementById('navList');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navList.classList.toggle('active');
+        document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
     });
 
-    /* ── Sticky Header ───────────────────────────────────────── */
-    $(window).on('scroll', function () {
-        $('#siteHeader').toggleClass('is-sticky', $(window).scrollTop() > 63);
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navList.classList.remove('active');
+            document.body.style.overflow = '';
+        });
     });
 
-    /* ── Search Functionality ────────────────────────────────── */
-    var searchProducts = [
-        { name: 'Samsung Galaxy S25 Ultra', brand: 'Samsung', price: '₹1,29,999', url: 'mobiles.html' },
-        { name: 'Samsung Galaxy A56 5G', brand: 'Samsung', price: '₹27,999', url: 'mobiles.html' },
-        { name: 'iPhone 16 Pro Max', brand: 'Apple', price: '₹1,44,900', url: 'mobiles.html' },
-        { name: 'OnePlus 13', brand: 'OnePlus', price: '₹69,999', url: 'mobiles.html' },
-        { name: 'vivo X200 Pro', brand: 'vivo', price: '₹65,999', url: 'mobiles.html' },
-        { name: 'Motorola Edge 50 Pro', brand: 'Motorola', price: '₹31,999', url: 'mobiles.html' },
-        { name: 'Nothing Phone (3a)', brand: 'Nothing', price: '₹23,999', url: 'mobiles.html' },
-        { name: 'Realme GT 7 Pro', brand: 'Realme', price: '₹59,999', url: 'mobiles.html' },
-        { name: 'POCO X7 Pro', brand: 'POCO', price: '₹24,999', url: 'mobiles.html' },
-        { name: 'iQOO Neo 10R', brand: 'iQOO', price: '₹29,999', url: 'mobiles.html' },
-        { name: 'Samsung Wireless Earbuds', brand: 'Samsung', price: '₹4,999', url: 'accessories.html' },
-        { name: 'Boat Airdopes 141', brand: 'Boat', price: '₹1,099', url: 'accessories.html' },
-        { name: 'Apple AirPods Pro 2', brand: 'Apple', price: '₹24,900', url: 'accessories.html' },
-        { name: 'Fast Charger 65W', brand: 'Generic', price: '₹1,499', url: 'accessories.html' },
-        { name: 'Tempered Glass Screen Protector', brand: 'Generic', price: '₹299', url: 'accessories.html' }
-    ];
+    // ---- Active Nav Link on Scroll ----
+    const sections = document.querySelectorAll('section[id]');
 
-    $('.searchInput').on('keyup', function () {
-        var search = $(this).val().toLowerCase();
-        var resultsHtml = '';
+    const updateActiveNav = () => {
+        const scrollY = window.scrollY + 120;
 
-        if (search.length >= 2) {
-            var filtered = searchProducts.filter(function (item) {
-                return item.name.toLowerCase().includes(search) ||
-                       item.brand.toLowerCase().includes(search);
-            });
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
 
-            if (filtered.length > 0) {
-                resultsHtml = '<div class="search-list">';
-                filtered.slice(0, 6).forEach(function (item) {
-                    resultsHtml += '<a href="' + item.url + '" class="search-item">';
-                    resultsHtml += '<span class="search-item-name">' + item.name + '</span>';
-                    resultsHtml += '<span class="search-item-price">' + item.price + '</span>';
-                    resultsHtml += '</a>';
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
                 });
-                resultsHtml += '</div>';
-            } else {
-                resultsHtml = '<div class="search-no-results">No products found</div>';
-            }
-        }
-
-        $('.searchResults').html(resultsHtml);
-    });
-
-    $(document).on('click', function (e) {
-        if (!$(e.target).closest('.sh-search').length) {
-            $('.searchResults').html('');
-        }
-    });
-
-    /* ── Scroll to Top Button ────────────────────────────────── */
-    var scrollTopBtn = $('.scroll-top');
-
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 300) {
-            scrollTopBtn.addClass('visible');
-        } else {
-            scrollTopBtn.removeClass('visible');
-        }
-    });
-
-    scrollTopBtn.on('click', function () {
-        $('html, body').animate({ scrollTop: 0 }, 500);
-    });
-
-    /* ── Brand Slider Auto Scroll ────────────────────────────── */
-    var brandSlider = document.querySelector('.brand-slider');
-    if (brandSlider) {
-        var scrollAmount = 0;
-        var scrollDirection = 1;
-
-        setInterval(function () {
-            if (brandSlider.scrollLeft + brandSlider.clientWidth >= brandSlider.scrollWidth) {
-                scrollDirection = -1;
-            } else if (brandSlider.scrollLeft <= 0) {
-                scrollDirection = 1;
-            }
-            brandSlider.scrollBy({ left: scrollDirection * 200, behavior: 'smooth' });
-        }, 3000);
-    }
-
-    /* ── Product Card Hover Effects ──────────────────────────── */
-    $('.product-card').on('mouseenter', function () {
-        $(this).find('.product-image img').css('transform', 'scale(1.05)');
-    }).on('mouseleave', function () {
-        $(this).find('.product-image img').css('transform', 'scale(1)');
-    });
-
-    /* ── Newsletter Form ─────────────────────────────────────── */
-    $('.newsletter-form').on('submit', function (e) {
-        e.preventDefault();
-        var email = $(this).find('input[type="email"]').val();
-        if (email) {
-            alert('Thank you for subscribing! We will send you the latest updates.');
-            $(this).find('input[type="email"]').val('');
-        }
-    });
-
-    /* ── Contact Form ────────────────────────────────────────── */
-    $('.contact-form').on('submit', function (e) {
-        e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
-        $(this)[0].reset();
-    });
-
-    /* ── Smooth Reveal on Scroll ─────────────────────────────── */
-    function revealOnScroll() {
-        $('.reveal').each(function () {
-            var elementTop = $(this).offset().top;
-            var viewportBottom = $(window).scrollTop() + $(window).height();
-
-            if (elementTop < viewportBottom - 50) {
-                $(this).addClass('revealed');
             }
         });
+    };
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+    // ---- FAQ Accordion ----
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all
+            faqItems.forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // ---- Animated Counters ----
+    const counters = document.querySelectorAll('.metric-counter');
+    let countersAnimated = false;
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const startTime = performance.now();
+
+            const updateCounter = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Ease out cubic
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(easeOut * target);
+
+                counter.textContent = current;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            };
+
+            requestAnimationFrame(updateCounter);
+        });
+    };
+
+    // Counter animation observer
+    const metricsSection = document.getElementById('metrics');
+    if (metricsSection) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        counterObserver.observe(metricsSection);
     }
 
-    $(window).on('scroll', revealOnScroll);
-    revealOnScroll();
+    // ---- Scroll Reveal Animations ----
+    const revealElements = document.querySelectorAll('.service-card, .feature-card, .process-step, .testimonial-card, .faq-item, .info-card');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal', 'visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
+
+    // ---- Contact Form ----
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const service = formData.get('service');
+        const message = formData.get('message');
+
+        // Basic validation
+        if (!name || !email || !service || !message) {
+            showNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Simulate form submission
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Sending...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            showNotification('Thank you! Your message has been sent. We\'ll get back to you within 24 hours.', 'success');
+            contactForm.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 1500);
+    });
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showNotification(message, type) {
+        // Remove existing notification
+        const existing = document.querySelector('.notification');
+        if (existing) existing.remove();
+
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <span>${message}</span>
+            </div>
+            <button class="notification-close">x</button>
+        `;
+
+        document.body.appendChild(notification);
+
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.addEventListener('click', () => {
+            notification.style.animation = 'slideOutRight 0.3s ease forwards';
+            setTimeout(() => notification.remove(), 300);
+        });
+
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.style.animation = 'slideOutRight 0.3s ease forwards';
+                setTimeout(() => notification.remove(), 300);
+            }
+        }, 5000);
+    }
+
+    // ---- Cookie Banner ----
+    const cookieConsent = document.getElementById('cookieConsent');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieDecline = document.getElementById('cookieDecline');
+
+    if (!localStorage.getItem('cookieConsent')) {
+        setTimeout(() => {
+            cookieConsent.classList.add('show');
+        }, 2000);
+    }
+
+    cookieAccept.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        cookieConsent.classList.remove('show');
+    });
+
+    cookieDecline.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        cookieConsent.classList.remove('show');
+    });
+
+    // ---- Smooth Scroll for Anchor Links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ---- Service Card Hover Animation ----
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            serviceCards.forEach(c => {
+                if (c !== card) {
+                    c.style.opacity = '0.7';
+                }
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            serviceCards.forEach(c => {
+                c.style.opacity = '1';
+            });
+        });
+    });
 
 });
-
-/* ── Search Results Styles (Dynamic) ──────────────────────── */
-var style = document.createElement('style');
-style.textContent = `
-    .search-list {
-        padding: 8px 0;
-    }
-    .search-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 14px;
-        text-decoration: none;
-        color: #292e2e;
-        transition: background .15s;
-    }
-    .search-item:hover {
-        background: #f7feff;
-    }
-    .search-item-name {
-        font-size: 13px;
-        font-weight: 600;
-    }
-    .search-item-price {
-        font-size: 13px;
-        font-weight: 700;
-        color: #f20000;
-    }
-    .search-no-results {
-        padding: 16px;
-        text-align: center;
-        color: #999;
-        font-size: 13px;
-    }
-    .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all .6s ease;
-    }
-    .reveal.revealed {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);

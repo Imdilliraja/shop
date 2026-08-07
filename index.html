@@ -3,375 +3,768 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilliraja Shop - Buy Mobile Phones Online | Arni's Trusted Mobile Store</title>
-    <meta name="description" content="Buy mobile phones online at best prices from Dilliraja Shop, Arni's trusted mobile store.">
+    <meta name="description" content="Kickstart Digital - Results-Driven Digital Marketing Agency in Tamil Nadu. SEO, Google Ads, Social Media Marketing, Website Development & Lead Generation. Book Your Free Strategy Call Today.">
+    <meta name="keywords" content="digital marketing Tamil Nadu, SEO Chennai, Google Ads Coimbatore, social media marketing Madurai, website development Tamil Nadu, lead generation India">
+    <title>Kickstart Digital | Digital Marketing Agency in Chennai, Tamil Nadu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- HEADER -->
-    <header class="site-header" id="siteHeader">
-        <div class="sh-row1">
-            <a href="index.html" class="sh-logo">
-                <span>DILLIRAJA SHOP</span>
-            </a>
-            <form class="sh-search" action="mobiles.html" method="get">
-                <input class="sh-search-input searchInput" type="search" name="search" placeholder="Search mobiles, brands, accessories..." autocomplete="off">
-                <button class="sh-search-btn" type="submit"><i class="fa fa-search"></i></button>
-                <div class="searchResults"></div>
-            </form>
-            <a href="tel:+919876543210" class="sh-phone">
-                <i class="fas fa-phone sh-phone-icon"></i> +91 98765 43210
-            </a>
-            <button class="sh-hamburger" id="shHamburger"><span></span><span></span><span></span></button>
+    <!-- Loading Animation -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Kickstart Digital</div>
         </div>
-        <div class="sh-row2">
-            <nav class="sh-nav">
-                <a href="index.html" class="sh-nav-link active">Home</a>
-                <a href="mobiles.html" class="sh-nav-link">Mobiles</a>
-                <a href="accessories.html" class="sh-nav-link">Accessories</a>
-                <a href="about.html" class="sh-nav-link">About Us</a>
-                <a href="contact.html" class="sh-nav-link">Contact Us</a>
-            </nav>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-banner">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="#">Learn more</a></p>
+            <div class="cookie-actions">
+                <button id="cookieAccept" class="btn btn-primary btn-sm">Accept All</button>
+                <button id="cookieDecline" class="btn btn-outline btn-sm">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <span class="logo-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="white" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Kickstart<span class="logo-highlight">Digital</span></span>
+                </a>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary header-cta">Book Free Strategy Call</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- MOBILE DRAWER -->
-    <div class="sh-drawer-overlay" id="shDrawerOverlay"></div>
-    <nav class="sh-drawer" id="shDrawer">
-        <div class="sh-drawer-handle"></div>
-        <div class="sh-drawer-header">
-            <span class="sh-drawer-title">Menu</span>
-            <button class="sh-drawer-close" id="shDrawerClose"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="sh-drawer-nav">
-            <a href="index.html" class="drawer-active"><i class="fas fa-home"></i> Home</a>
-            <a href="mobiles.html"><i class="fas fa-mobile-alt"></i> Mobiles</a>
-            <a href="accessories.html"><i class="fas fa-headphones-alt"></i> Accessories</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
-        </div>
-        <div class="sh-drawer-footer">
-            <a href="tel:+919876543210" class="sh-drawer-phone"><i class="fas fa-phone"></i> +91 98765 43210</a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero-section">
-        <div class="cw">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Arni's Most <span>Trusted</span> Mobile Store</h1>
-                    <p>Buy mobile phones at the best prices from Dilliraja Shop. Compare specifications, offers, and get genuine products with warranty.</p>
-                    <a href="mobiles.html" class="hero-btn"><i class="fas fa-shopping-cart"></i> Shop Now</a>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-text-block">
+                    <span class="hero-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-right:4px;">
+                            <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 24C17.16 22.74 21 17.55 21 12V7L12 2Z" fill="#f59e0b"/>
+                            <path d="M10 12L11.5 13.5L15 9.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Trusted by 150+ Businesses
+                    </span>
+                    <h1 class="hero-title">Grow Your Business with <span class="text-gradient">Results-Driven</span> Digital Marketing</h1>
+                    <p class="hero-text">We help small businesses, startups, and e-commerce brands achieve measurable growth through strategic SEO, high-converting Google Ads, engaging Social Media Marketing, custom Website Development, and powerful Lead Generation.</p>
+                    <div class="hero-ctas">
+                        <a href="#contact" class="btn btn-primary btn-lg">Book Your Free Strategy Call</a>
+                        <a href="#services" class="btn btn-outline btn-lg">View Our Services</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0B6E4F"/><path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>200+ Projects</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0B6E4F"/><path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>95% Client Satisfaction</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0B6E4F"/><path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>Google Certified Team</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-card"><h3>500+</h3><p>Products Available</p></div>
-                    <div class="stat-card"><h3>1000+</h3><p>Happy Customers</p></div>
-                    <div class="stat-card"><h3>10+</h3><p>Years Experience</p></div>
-                    <div class="stat-card"><h3>100%</h3><p>Genuine Products</p></div>
+                <div class="hero-visual">
+                    <div class="hero-dashboard">
+                        <div class="dashboard-card card-revenue">
+                            <div class="card-header">
+                                <span class="card-label">Revenue Overview</span>
+                                <span class="card-badge up">+127%</span>
+                            </div>
+                            <svg class="chart-svg" viewBox="0 0 400 120" fill="none">
+                                <defs>
+                                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#0B6E4F" stop-opacity="0.3"/>
+                                        <stop offset="100%" stop-color="#0B6E4F" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0 100 L50 80 L100 85 L150 60 L200 65 L250 40 L300 35 L350 20 L400 15 L400 120 L0 120Z" fill="url(#chartGrad)"/>
+                                <path d="M0 100 L50 80 L100 85 L150 60 L200 65 L250 40 L300 35 L350 20 L400 15" stroke="#0B6E4F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <span class="card-label">Traffic</span>
+                                <span class="card-badge active">Active</span>
+                            </div>
+                            <div class="card-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">+89%</span>
+                                    <span class="metric-label">Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <span class="card-label">Campaigns</span>
+                                <span class="card-badge up">Running</span>
+                            </div>
+                            <div class="campaign-bars">
+                                <div class="bar" style="width:90%"></div>
+                                <div class="bar" style="width:75%"></div>
+                                <div class="bar" style="width:85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+    <section class="partners">
+        <div class="container">
+            <p class="partners-label">Trusted by leading platforms</p>
+            <div class="partners-logos">
+                <div class="partner-logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <span>Google <strong>Partner</strong></span>
+                </div>
+                <div class="partner-logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#1877F2">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    <span>Meta <strong>Partner</strong></span>
+                </div>
+                <div class="partner-logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#FF7A59">
+                        <path d="M19.5 3H4.5C3.67 3 3 3.67 3 4.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5zM16 14H14v2h-4v-2H8v-4h2V8h4v2h2v4z"/>
+                    </svg>
+                    <span>Hub<strong>Spot</strong></span>
+                </div>
+                <div class="partner-logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="#96BF48">
+                        <path d="M19.5 3H4.5C3.67 3 3 3.67 3 4.5v15c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-15c0-.83-.67-1.5-1.5-1.5zM15.5 15.5c0 .28-.22.5-.5.5H9c-.28 0-.5-.22-.5-.5v-7c0-.28.22-.5.5-.5h6c.28 0 .5.22.5.5v7z"/>
+                    </svg>
+                    <span>Shop<strong>ify</strong></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BRANDS -->
-    <section class="brand-section">
-        <div class="cw">
-            <div class="sec-head"><h2>Top Mobile Brands</h2></div>
-            <div class="brand-slider">
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/samsung-logo.svg" alt="Samsung" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#1428a0;&quot;>Samsung</span>'"></div>
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/apple-logo.svg" alt="Apple" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#555;&quot;>Apple</span>'"></div>
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/oneplus-logo.svg" alt="OnePlus" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#eb0028;&quot;>OnePlus</span>'"></div>
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/vivo-logo.svg" alt="vivo" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#415fff;&quot;>vivo</span>'"></div>
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/motorola-logo.svg" alt="Motorola" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#0078d4;&quot;>Motorola</span>'"></div>
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/realme-logo.svg" alt="Realme" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#ffc700;&quot;>Realme</span>'"></div>
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/nothing-logo.svg" alt="Nothing" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#000;&quot;>Nothing</span>'"></div>
-                <div class="brand-card"><img src="https://cdn.mobilekidukaan.in/assets/web/images/brand-logo/poco-logo.svg" alt="POCO" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#ff6700;&quot;>POCO</span>'"></div>
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">Comprehensive Digital Marketing Solutions</h2>
+                <p class="section-subtitle">We offer end-to-end digital marketing services designed to maximize your ROI and accelerate business growth.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Dominate search rankings with our data-driven SEO strategies. We optimize your website to attract organic traffic and qualified leads.</p>
+                    <a href="#contact" class="service-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Google Ads</h3>
+                    <p>Get immediate visibility with high-converting PPC campaigns. We manage your Google Ads to maximize ROI and minimize wasted spend.</p>
+                    <a href="#contact" class="service-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8C6 15 3 17 3 17H21S18 15 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21A2 2 0 0 1 10.27 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Build an engaged community and amplify your brand across all social platforms with strategic content and targeted campaigns.</p>
+                    <a href="#contact" class="service-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21H16M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Website Development</h3>
+                    <p>Get a fast, responsive, and conversion-optimized website that turns visitors into customers and represents your brand perfectly.</p>
+                    <a href="#contact" class="service-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Branding</h3>
+                    <p>Create a memorable brand identity that resonates with your audience and sets you apart from competitors.</p>
+                    <a href="#contact" class="service-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Content Marketing</h3>
+                    <p>Engage your audience with valuable content that builds trust, establishes authority, and drives conversions.</p>
+                    <a href="#contact" class="service-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CATEGORIES -->
-    <section class="categories-section">
-        <div class="cw">
-            <div class="sec-head"><h2>Shop by Category</h2></div>
-            <div class="categories-grid">
-                <a href="mobiles.html" class="category-card reveal"><div class="category-icon"><i class="fas fa-mobile-alt"></i></div><h3>Smartphones</h3><p>200+ Models</p></a>
-                <a href="accessories.html" class="category-card reveal"><div class="category-icon"><i class="fas fa-headphones"></i></div><h3>Earbuds</h3><p>50+ Products</p></a>
-                <a href="accessories.html" class="category-card reveal"><div class="category-icon"><i class="fas fa-clock"></i></div><h3>Smartwatches</h3><p>30+ Models</p></a>
-                <a href="accessories.html" class="category-card reveal"><div class="category-icon"><i class="fas fa-bolt"></i></div><h3>Chargers</h3><p>40+ Products</p></a>
-                <a href="accessories.html" class="category-card reveal"><div class="category-icon"><i class="fas fa-shield-alt"></i></div><h3>Cases & Covers</h3><p>100+ Designs</p></a>
+    <!-- Why Choose Us -->
+    <section class="why-us section" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">We Deliver Results That Matter</h2>
+                <p class="section-subtitle">Our commitment to excellence sets us apart from the competition.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- FEATURED PRODUCTS -->
-    <section class="products-section">
-        <div class="cw">
-            <div class="sec-head"><h2>Featured Mobile Phones</h2></div>
-            <div class="products-grid">
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-new">New</span>
-                        <img src="assets/images/products/samsung-galaxy-z-fold8-ultra.webp" alt="Samsung Galaxy Z Fold8 Ultra">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Samsung</div>
-                        <div class="product-name">Galaxy Z Fold8 Ultra</div>
-                        <div class="product-specs"><span>12GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹1,99,999</span><span class="price-old">₹2,04,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-new">New</span>
-                        <img src="assets/images/products/samsung-galaxy-z-flip8.webp" alt="Samsung Galaxy Z Flip8">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Samsung</div>
-                        <div class="product-name">Galaxy Z Flip8</div>
-                        <div class="product-specs"><span>8GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹1,09,999</span><span class="price-old">₹1,24,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-sale">Sale</span>
-                        <img src="assets/images/products/iphone-16-pro-max.webp" alt="iPhone 16 Pro Max">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Apple</div>
-                        <div class="product-name">iPhone 16 Pro Max</div>
-                        <div class="product-specs"><span>A18 Pro</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹1,44,900</span><span class="price-old">₹1,59,900</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-hot">Hot</span>
-                        <img src="assets/images/products/oneplus-13.webp" alt="OnePlus 13">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">OnePlus</div>
-                        <div class="product-name">OnePlus 13</div>
-                        <div class="product-specs"><span>12GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹69,999</span><span class="price-old">₹79,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-deal">Deal</span>
-                        <img src="assets/images/products/vivo-x300-pro.webp" alt="vivo X300 Pro">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">vivo</div>
-                        <div class="product-name">vivo X300 Pro</div>
-                        <div class="product-specs"><span>12GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹65,999</span><span class="price-old">₹74,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-sale">Sale</span>
-                        <img src="assets/images/products/samsung-galaxy-a27-5g.webp" alt="Samsung Galaxy A27 5G">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Samsung</div>
-                        <div class="product-name">Galaxy A27 5G</div>
-                        <div class="product-specs"><span>8GB RAM</span><span>128GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹31,999</span><span class="price-old">₹46,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-new">New</span>
-                        <img src="assets/images/products/nothing-phone-4b.webp" alt="Nothing Phone 4b">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Nothing</div>
-                        <div class="product-name">Nothing Phone 4b</div>
-                        <div class="product-specs"><span>8GB RAM</span><span>128GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹34,999</span><span class="price-old">₹54,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-hot">Hot</span>
-                        <img src="assets/images/products/iqoo-neo-10r.webp" alt="iQOO Neo 10r">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">iQOO</div>
-                        <div class="product-name">iQOO Neo 10r</div>
-                        <div class="product-specs"><span>8GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹27,890</span><span class="price-old">₹31,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <img src="assets/images/products/poco-x7-pro.webp" alt="POCO X7 Pro">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">POCO</div>
-                        <div class="product-name">POCO X7 Pro</div>
-                        <div class="product-specs"><span>8GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹27,999</span><span class="price-old">₹28,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-new">New</span>
-                        <img src="assets/images/products/redmi-note-15-pro-plus.webp" alt="Redmi Note 15 Pro+">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Redmi</div>
-                        <div class="product-name">Note 15 Pro+ 5G</div>
-                        <div class="product-specs"><span>8GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹37,999</span><span class="price-old">₹39,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-sale">Sale</span>
-                        <img src="assets/images/products/motorola-edge-70-pro.webp" alt="Motorola Edge 70 Pro+">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Motorola</div>
-                        <div class="product-name">Edge 70 Pro+</div>
-                        <div class="product-specs"><span>12GB RAM</span><span>256GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹47,999</span><span class="price-old">₹84,999</span></div>
-                    </div>
-                </a>
-                <a href="product.html" class="product-card reveal">
-                    <div class="product-image">
-                        <span class="product-badge badge-deal">Deal</span>
-                        <img src="assets/images/products/realme-p4r-5g.webp" alt="realme P4R 5G">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">realme</div>
-                        <div class="product-name">P4R 5G</div>
-                        <div class="product-specs"><span>6GB RAM</span><span>128GB</span><span>5G</span></div>
-                        <div class="product-price"><span class="price-current">₹18,999</span><span class="price-old">₹34,999</span></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="features-section">
-        <div class="cw">
-            <div class="sec-head"><h2>Why Choose Dilliraja Shop?</h2></div>
             <div class="features-grid">
-                <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-certificate"></i></div><h3>100% Genuine Products</h3><p>All products are sourced directly from authorized distributors with complete warranty.</p></div>
-                <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-tags"></i></div><h3>Best Price Guarantee</h3><p>We offer the most competitive prices in Arni. Find it cheaper? We'll match it!</p></div>
-                <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-truck"></i></div><h3>Fast Local Delivery</h3><p>Get your order delivered within 24 hours. Free delivery on orders above ₹5,000.</p></div>
-                <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>Dedicated Support</h3><p>Our expert team is always ready to help you choose the right phone.</p></div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 1V23M17 5H9.5A3.5 3.5 0 0 0 6 8.5A3.5 3.5 0 0 0 9.5 12H6.5A3.5 3.5 0 0 0 10 15.5A3.5 3.5 0 0 0 13.5 19H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>ROI Focused</h3>
+                    <p>Every strategy is designed to maximize your return on investment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Transparent Reporting</h3>
+                    <p>Real-time dashboards and detailed reports keep you informed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21V19C22.9986 18.1137 22.7045 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Experienced Team</h3>
+                    <p>Our experts have years of experience across all digital channels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/><path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Custom Strategies</h3>
+                    <p>Tailored solutions that align with your unique business goals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15A2 2 0 0 1 19 17H7L3 21V5A2 2 0 0 1 5 3H19A2 2 0 0 1 21 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Fast Support</h3>
+                    <p>24/7 dedicated support to address your queries promptly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12A10 10 0 1 1 16.93 2.26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Track record of delivering measurable business growth.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- NEWS -->
-    <section class="news-section">
-        <div class="cw">
-            <div class="sec-head"><h2>Latest Mobile News</h2></div>
-            <div class="news-grid">
-                <div class="news-card reveal">
-                    <div class="news-image"><i class="fas fa-mobile-alt"></i></div>
-                    <div class="news-content">
-                        <span class="news-tag">Launch</span>
-                        <h3>Samsung Galaxy Z Fold8 Series Launched in India</h3>
-                        <p>Samsung has officially launched its latest foldable smartphones in India.</p>
-                        <div class="news-meta"><i class="far fa-calendar"></i> August 2, 2026</div>
+    <!-- Our Process -->
+    <section class="process section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Process</span>
+                <h2 class="section-title">How We Drive Your Success</h2>
+                <p class="section-subtitle">A proven 5-step methodology that delivers consistent results.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>We analyze your business, competitors, and market to understand your unique challenges and opportunities.</p>
                     </div>
                 </div>
-                <div class="news-card reveal">
-                    <div class="news-image"><i class="fas fa-bolt"></i></div>
-                    <div class="news-content">
-                        <span class="news-tag">Deal</span>
-                        <h3>OnePlus 13 Price Reduced by ₹5,000</h3>
-                        <p>OnePlus has announced a permanent price cut for its flagship OnePlus 13.</p>
-                        <div class="news-meta"><i class="far fa-calendar"></i> August 1, 2026</div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Strategy</h3>
+                        <p>We develop a customized digital marketing strategy aligned with your goals and budget.</p>
                     </div>
                 </div>
-                <div class="news-card reveal">
-                    <div class="news-image"><i class="fas fa-camera"></i></div>
-                    <div class="news-content">
-                        <span class="news-tag">Upcoming</span>
-                        <h3>vivo X300e India Launch Confirmed</h3>
-                        <p>vivo is all set to launch its new camera-focused smartphone X300e.</p>
-                        <div class="news-meta"><i class="far fa-calendar"></i> July 30, 2026</div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Execution</h3>
+                        <p>Our team implements the strategy with precision, launching campaigns and optimizing your digital presence.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Optimization</h3>
+                        <p>We continuously monitor, test, and refine campaigns to maximize performance and ROI.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Growth</h3>
+                        <p>Scale successful strategies and expand your digital footprint for sustainable business growth.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section class="newsletter-section">
-        <div class="cw" style="text-align: center;">
-            <h2 style="margin-bottom: 10px;">Stay Updated with Best Deals</h2>
-            <p style="color: #64748B; margin-bottom: 24px;">Subscribe to our newsletter and never miss a deal!</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
+    <!-- Success Metrics -->
+    <section class="metrics" id="metrics">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M22 12H18L15 21L9 3L6 12H2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="metric-counter" data-target="200">0</div>
+                    <span class="metric-suffix">+</span>
+                    <div class="metric-title">Projects Completed</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M17 21V19C17 17.94 16.58 16.92 15.83 16.17C15.08 15.42 14.06 15 13 15H5C3.95 15 2.93 15.42 2.18 16.17C1.43 16.92 1 17.94 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="white" stroke-width="2"/></svg>
+                    </div>
+                    <div class="metric-counter" data-target="150">0</div>
+                    <span class="metric-suffix">+</span>
+                    <div class="metric-title">Happy Clients</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12A10 10 0 1 1 16.93 2.26" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 4L12 14.01L9 11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="metric-counter" data-target="95">0</div>
+                    <span class="metric-suffix">%</span>
+                    <div class="metric-title">Client Satisfaction</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/><path d="M12 6V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="metric-counter" data-target="8">0</div>
+                    <span class="metric-suffix">+</span>
+                    <div class="metric-title">Years Experience</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="cw">
+    <!-- Testimonials -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Don't just take our word for it - hear from businesses we've helped grow.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card featured">
+                    <div class="testimonial-stars">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Kickstart Digital transformed our silk business online. Our organic traffic increased by 300% in just 6 months. Now customers from across India find us easily. Their SEO expertise is unmatched!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="author-info">
+                            <strong>Rajesh Kumar</strong>
+                            <span>Owner, Kanchipuram Silk House</span>
+                            <span class="author-industry">Textiles, Kanchipuram</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The Google Ads campaign they designed for our restaurant chain delivered 5x ROI within the first quarter. Bookings from Chennai, Coimbatore and Madurai increased dramatically!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="author-info">
+                            <strong>Priya Selvaraj</strong>
+                            <span>Director, Annapoorna Restaurants</span>
+                            <span class="author-industry">Food & Hospitality, Chennai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Professional, responsive, and results-oriented. They helped us generate 200+ qualified leads per month for our real estate projects in Coimbatore. A true growth partner!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="author-info">
+                            <strong>Karthik Menon</strong>
+                            <span>CEO, Sree Varshini Properties</span>
+                            <span class="author-industry">Real Estate, Coimbatore</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Our temple tourism packages now reach devotees worldwide through their social media marketing. Bookings from USA, UK and Singapore increased by 400%. Excellent team!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="author-info">
+                            <strong>Lakshmi Narayanan</strong>
+                            <span>Manager, Madurai Tourism Services</span>
+                            <span class="author-industry">Travel & Tourism, Madurai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"They built us a beautiful e-commerce website for our organic spices brand. Online sales went from zero to 500 orders per month within 3 months. Best investment we made!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="author-info">
+                            <strong>Anitha Devi</strong>
+                            <span>Founder, Nilgiris Organic Spices</span>
+                            <span class="author-industry">E-commerce, Ooty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Got questions? We've got answers.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How long does it take to see results from SEO?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>SEO is a long-term strategy. Typically, you'll start seeing initial improvements within 3-6 months, with significant results within 6-12 months. The timeline depends on your industry competition, current website state, and the keywords we're targeting.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What makes your Google Ads management different?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We focus on ROI, not just clicks. Our team uses advanced targeting, A/B testing, and continuous optimization to ensure every dollar spent delivers maximum returns. We also provide transparent reporting so you always know where your budget is going.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you work with small businesses?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialize in helping small businesses and startups compete with larger brands. Our strategies are scalable and tailored to fit your budget while delivering maximum impact.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is your pricing structure?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer flexible pricing based on your needs and goals. Whether you need a single service or a comprehensive digital marketing package, we'll create a custom plan that fits your budget. Contact us for a free consultation and quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do you measure success?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We track KPIs aligned with your business goals: traffic, leads, conversions, ROI, and revenue growth. You'll receive regular reports with clear metrics and insights, plus access to real-time dashboards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Grow Your Business?</h2>
+                <p>Book your free strategy call today and discover how we can help you achieve measurable results.</p>
+                <a href="#contact" class="btn btn-white btn-lg">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact Us</span>
+                <h2 class="section-title">Let's Start Your Growth Journey</h2>
+                <p class="section-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p><a href="mailto:hello@kickstartdigital.com">hello@kickstartdigital.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1469 21.5901 20.9046 21.7335 20.6408 21.8227C20.377 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77383 17.3147 6.72534 15.2662 5.19 12.85C3.49998 10.2412 2.44824 7.27097 2.12 4.18C2.09501 3.90347 2.12788 3.62476 2.2165 3.36162C2.30513 3.09849 2.44757 2.85669 2.63477 2.65162C2.82196 2.44655 3.04981 2.28271 3.30379 2.17052C3.55778 2.05833 3.83234 2.00026 4.11 2H7.11C7.59531 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04208 3.23945 9.11 3.72C9.23662 4.68007 9.47145 5.62273 9.81 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.36 8.64L8.09 9.91C9.51356 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9752 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p><a href="tel:+919500388259">+91 95003 88259</a></p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="white" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="white" stroke-width="2"/></svg>
+                        </div>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <p>26J6+H2C, 12th Ave, R.V. Nagar,<br>Mettuppalayam, Ashok Nagar,<br>Chennai, Tamil Nadu 600083</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/><path d="M12 6V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div>
+                            <strong>Business Hours</strong>
+                            <p>Mon - Fri: 10am - 5pm<br>Sat - Sun: Closed</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@company.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Name</label>
+                            <input type="text" id="business" name="business" placeholder="Your Company">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="seo">SEO Optimization</option>
+                                <option value="google-ads">Google Ads Management</option>
+                                <option value="social-media">Social Media Marketing</option>
+                                <option value="website">Website Development</option>
+                                <option value="branding">Branding</option>
+                                <option value="content">Content Marketing</option>
+                                <option value="full-service">Full-Service Digital Marketing</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget Range (Optional)</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="1000-2500">$1,000 - $2,500/month</option>
+                                <option value="2500-5000">$2,500 - $5,000/month</option>
+                                <option value="5000-10000">$5,000 - $10,000/month</option>
+                                <option value="10000+">$10,000+/month</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your business goals and how we can help..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">Send Message & Get Free Audit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>Dilli<span>raja</span> Shop</h3>
-                    <p>Arni's trusted mobile phone store since 2014. Genuine products with warranty at best prices.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <div class="footer-about">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="white" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text">Kickstart<span class="logo-highlight">Digital</span></span>
+                    </a>
+                    <p class="footer-desc">Empowering businesses with data-driven digital marketing solutions that deliver measurable results.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="mobiles.html">Mobiles</a></li>
-                        <li><a href="accessories.html">Accessories</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#services">SEO Optimization</a></li>
+                        <li><a href="#services">Google Ads</a></li>
+                        <li><a href="#services">Social Media Marketing</a></li>
+                        <li><a href="#services">Website Development</a></li>
+                        <li><a href="#services">Branding</a></li>
+                        <li><a href="#services">Content Marketing</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Popular Brands</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="mobiles.html">Samsung</a></li>
-                        <li><a href="mobiles.html">Apple iPhone</a></li>
-                        <li><a href="mobiles.html">OnePlus</a></li>
-                        <li><a href="mobiles.html">vivo</a></li>
-                        <li><a href="mobiles.html">Motorola</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>123, Main Road, Arni,<br>Tamil Nadu - 632501</span></div>
-                    <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+91 98765 43210</span></div>
-                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@dillirajashop.in</span></div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 Dilliraja Shop. All Rights Reserved.</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kickstart Digital. All rights reserved.</p>
+                <p class="developer-credit">Developed by <a href="https://dilliraja.lovable.app/" target="_blank" rel="noopener">Dilliraja S</a></p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <button class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/9500388259" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="white">
+            <path d="M16 2C8.268 2 2 8.268 2 16C2 18.86 2.98 21.48 4.68 23.44L3.5 29L9.36 27.88C11.24 29.48 13.54 30.4 16 30.4C23.732 30.4 30 24.132 30 16.4C30 8.668 23.732 2 16 2ZM16 27.6C13.8 27.6 11.76 26.84 10.12 25.56L9.8 25.36L6.4 26.2L7.24 22.92L7 22.56C5.52 20.84 4.6 18.72 4.6 16.4C4.6 9.676 10.076 4.4 16 4.4C21.924 4.4 27.4 9.676 27.4 16.4C27.4 23.124 21.924 27.6 16 27.6ZM22.04 19.44C21.68 19.24 19.96 18.4 19.64 18.28C19.32 18.16 19.08 18.08 18.84 18.44C18.6 18.8 17.96 19.56 17.76 19.8C17.56 20.04 17.36 20.08 17 19.88C16.64 19.68 15.48 19.28 14.12 18.08C13.04 17.16 12.32 16 12.12 15.64C11.92 15.28 12.08 15.08 12.28 14.88C12.48 14.68 12.68 14.4 12.88 14.2C13.08 14 13.16 13.84 13.24 13.6C13.32 13.36 13.28 13.16 13.2 12.96C13.12 12.76 12.4 11.2 12.12 10.6C11.84 10 11.56 10.08 11.36 10.08C11.16 10.08 10.92 10.08 10.68 10.08C10.44 10.08 10.08 10.2 9.76 10.56C9.44 10.92 8.64 11.88 8.64 13.4C8.64 14.92 9.76 16.36 9.92 16.56C10.08 16.8 12.08 19.84 15.12 20.92C18.16 22 18.16 21.64 18.84 21.56C19.52 21.48 20.88 20.76 21.16 19.96C21.44 19.16 21.44 18.48 21.36 18.36C21.28 18.24 20.96 18.16 20.6 17.96L22.04 19.44Z"/>
+        </svg>
+    </a>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>

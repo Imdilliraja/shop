@@ -1,47 +1,53 @@
-# Dilliraja Shop
+# Kickstart Digital - Landing Page
 
-Arni's trusted mobile phone store since 2014. Genuine products with warranty at best prices.
+A premium, conversion-focused landing page for **Kickstart Digital**, a results-driven digital marketing agency based in Chennai, Tamil Nadu.
 
-## Location
+## Features
 
-123, Main Road, Arni, Tamil Nadu - 632501
-
-## Contact
-
-- Phone: +91 98765 43210
-- Email: info@dillirajashop.in
-
-## Structure
-
-```
-dilli/
-├── index.html          # Homepage
-├── about.html          # About Us
-├── contact.html        # Contact Us
-├── mobiles.html        # Mobile Phones Listing
-├── product.html        # Product Detail Page
-├── accessories.html    # Accessories Listing
-├── assets/
-│   ├── css/
-│   │   ├── style.css       # Main styles (Blue/Indigo theme)
-│   │   └── responsive.css  # Responsive overrides
-│   ├── js/
-│   │   ├── main.js         # Main JavaScript (jQuery)
-│   │   └── product.js      # Product page scripts
-│   ├── images/
-│   │   ├── products/       # Product images
-│   │   └── brands/         # Brand logos
-│   ├── icons/              # Site icons
-│   └── fonts/              # Custom fonts
-├── favicon.ico
-├── robots.txt
-├── sitemap.xml
-└── README.md
-```
+- Responsive design (desktop, tablet, mobile)
+- Animated dashboard hero section
+- Smooth scroll navigation
+- FAQ accordion
+- Contact form with validation
+- Cookie consent banner
+- WhatsApp floating button
+- Back-to-top button
+- Scroll reveal animations
 
 ## Tech Stack
 
-- HTML5, CSS3, JavaScript (jQuery)
-- Font Awesome 5 (icons)
-- Google Fonts (Roboto)
-- Blue/Indigo color theme (#4F46E5)
+- HTML5
+- CSS3 (Custom Properties, Grid, Flexbox)
+- Vanilla JavaScript
+
+## Sections
+
+1. Header (sticky navigation)
+2. Hero (animated dashboard)
+3. Partner Logos
+4. Services
+5. Why Choose Us
+6. Our Process
+7. Metrics
+8. Testimonials
+9. FAQ
+10. Final CTA
+11. Contact Form
+12. Footer
+
+## Setup
+
+1. Clone the repository
+2. Open `index.html` in a browser
+
+No build tools required - pure HTML/CSS/JS.
+
+## Contact
+
+- Email: hello@kickstartdigital.com
+- Phone: +91 98765 43210
+- Address: Ashok Nagar, Chennai, Tamil Nadu 600083
+
+## Developer
+
+Developed by [Dilliraja S](https://dilliraja.lovable.app/)
